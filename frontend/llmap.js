@@ -510,21 +510,29 @@ baseMaps: function() {
  var stamenAttr = 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
 
   return [
-     ["OSM Light",
+     ["Mapbox Streets",
       new L.TileLayer(
-        'http://d.tiles.mapbox.com/v3/foursquare.map-t2z7w2jz/{z}/{x}/{y}.png',
-        {
-          subdomains: 'abcd'
-        }
+        'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+          attribution: '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>',
+          tileSize: 512,
+          maxZoom: 18,
+          zoomOffset: -1,
+          id: 'mapbox/streets-v12',
+          accessToken: 'MAPBOX_TOKEN'
+          }
       ),
       mapboxTilesAttr
     ],
-    ["Mapbox Satellite",
+    ["Mapbox Satellite Streets",
       new L.TileLayer(
-        'http://{s}.tiles.mapbox.com/v3/foursquare.map-7v8eu5p1/{z}/{x}/{y}.png',
-        {
-          subdomains: 'abcd',
-        }
+        'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+          attribution: '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>',
+          tileSize: 512,
+          maxZoom: 18,
+          zoomOffset: -1,
+          id: 'mapbox/satellite-streets-v11',
+          accessToken: 'MAPBOX_TOKEN'
+          }
       ),
       mapboxTilesAttr
     ],

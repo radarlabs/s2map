@@ -101,4 +101,4 @@ def send_i2ndex():
   return send_from_directory('.', "index.html")
 
 if __name__ == '__main__':
-  app.run(debug=True, use_reloader=True)
+  app.run(debug=True, use_reloader=True, host='0.0.0.0')

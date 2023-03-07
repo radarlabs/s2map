@@ -1,8 +1,8 @@
-FROM ubuntu:17.10
+FROM ubuntu:23.04
 RUN apt-get update
 RUN apt-get -y install make g++ swig libssl-dev cmake gawk libevent-dev libcurl4-openssl-dev libboost-dev nginx
-RUN apt-get -y install curl less vim
-RUN apt-get -y install python-pip
+RUN apt-get -y install curl less vim telnet
+RUN apt-get -y install python3-pip
 COPY s2map-server/ /usr/src/myapp/s2map-server
 WORKDIR /usr/src/myapp/s2map-server
 RUN make
@@ -15,6 +15,6 @@ WORKDIR /usr/src/myapp
 COPY nginx.conf /etc/nginx/sites-enabled/proxy.conf
 RUN rm /etc/nginx/sites-enabled/default
 CMD ["/usr/src/myapp/run-all.sh"]
-# RUN apt-get -y install python python-pip
+# RUN apt-get -y install python python3-pip
 #CMD ["python", "-m", "SimpleHTTPServer", "8000"]
 EXPOSE 81
