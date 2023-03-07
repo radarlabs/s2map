@@ -20,13 +20,11 @@ Create a `.env` file and add a new variable `MAPBOX_TOKEN`. Paste the public acc
 - open http://localhost:81
 
 If you need them:
-- kill: `docker kill `docker ps | egrep s2map | awk '{print $1}'``
-- open shell: `docker exec -it `docker ps | egrep s2map | awk '{print $1}'` /bin/bash``
-
-Errata
-======
-I'm curious if other people find this useful or have feature suggestions.
-
-TODO
-====
-- See about making it 100% python for ease of not compiling C++
+- kill (CTRL+C doesn't seem to work)
+```
+docker kill `docker ps | egrep s2map | awk '{print $1}'`
+```
+- open shell: 
+```
+docker exec -it `docker ps | egrep s2map | awk '{print $1}'` /bin/bash`
+```
